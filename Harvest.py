@@ -10,7 +10,7 @@ parser.add_argument('-s', '--salary', required=True, help='Yearly salary value u
 
 args = parser.parse_args()
 
-url = args.url
+url = args.loginURL
 salary = args.salary
 
 credentialsEncoded = base64.b64encode(args.user + ':' + args.password)
@@ -62,6 +62,6 @@ fifteenRemHours = (1880 * 0.85) - totalHours
 tenRemHours = (1880 * .80) - totalHours
 
 print "\n"
-print "18% hours remaining " + str(eighteenRemHours) + " burn rate required " + str(eighteenRemHours / numWorkDays) + " bonus after 30% tax: " + str((salary * 0.18) * .70)
-print "15% hours remaining " + str(fifteenRemHours) + " burn rate required " + str(fifteenRemHours / numWorkDays) + " bonus after 30% tax: " + str((salary * 0.15) * .70)
-print "10% hours remaining " + str(tenRemHours) + " burn rate required " + str(tenRemHours / numWorkDays) + " bonus after 30% tax: " + str((salary * 0.10) * .70)
+print "18% hours remaining " + str(eighteenRemHours) + " burn rate required " + str(eighteenRemHours / numWorkDays) + " bonus after 30% tax: " + str((int(salary) * 0.18) * .70)
+print "15% hours remaining " + str(fifteenRemHours) + " burn rate required " + str(fifteenRemHours / numWorkDays) + " bonus after 30% tax: " + str((int(salary) * 0.15) * .70)
+print "10% hours remaining " + str(tenRemHours) + " burn rate required " + str(tenRemHours / numWorkDays) + " bonus after 30% tax: " + str((int(salary) * 0.10) * .70)
